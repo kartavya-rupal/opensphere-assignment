@@ -1,0 +1,6 @@
+1.  Tiptap is a browser-only editor, It touches window It measures DOM It uses document... 
+    when Next.js tries to render it on the server, Tiptap detects SSR and throws error.
+
+2.  Pagination currently operates at block-node level (paragraphs, headings, lists).
+    Very large single paragraphs that exceed a page height are not split mid-paragraph and will occupy their own page.
+    This mirrors a simplified pagination model suitable for a prototype and can be improved by line-level pagination in future iterations.
