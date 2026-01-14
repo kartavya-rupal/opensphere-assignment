@@ -31,6 +31,65 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+# Document Pagination Editor
+
+A Tiptap-based rich text editor that shows **real-time page breaks**, allowing users to see exactly how their document will appear when printed.
+
+---
+
+## Features
+
+- Rich text editor using **Tiptap**
+- Real-time visual pagination
+- Fixed page size with **1-inch margins**
+- Automatic page creation and reflow while typing
+- Supports headings, paragraphs, bold/italic text, and bullet lists
+- Client-side only (no backend)
+
+---
+
+## Tech Stack
+
+- Next.js (App Router)
+- TypeScript
+- Tiptap
+- Tailwind CSS
+
+---
+
+## Setup
+
+```bash
+npm install
+npm run dev
+```
+
+## Pagination Approach
+
+Pagination is implemented using DOM measurement:
+
+Editor content is rendered into a hidden container
+
+Each block element (paragraphs, headings, lists) is measured by its rendered height
+
+Blocks are added to a page until the usable page height is exceeded
+
+Pagination recalculates on every editor update, enabling live reflow
+
+This ensures page breaks match real print output.
+
+---
+
+## Trade-offs & Limitations
+
+Pagination operates at block level
+
+Very long single paragraphs are not split mid-paragraph and may occupy a full page
+
+This is an intentional trade-off for simplicity and performance
+
+
+
+---
